@@ -25,9 +25,7 @@ class TestBowling : public testing::Test{
 };
 
 TEST_F(TestBowling, testGutterGame) {
-	int n = 20;
-	int pins = 0;
-	rollMany(n, pins);
+	rollMany(20, 0);
 	EXPECT_THAT(g->score(), Eq(0));
 }
 
