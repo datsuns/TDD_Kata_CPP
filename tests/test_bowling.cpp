@@ -21,5 +21,6 @@ TEST_F(TestBowling, testGutterGame) {
 		g->roll(0);
 		EXPECT_THAT(g->score(), Eq(0));
 	}
+	delete g:
 }
 
