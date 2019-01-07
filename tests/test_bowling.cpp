@@ -30,9 +30,7 @@ TEST_F(TestBowling, testGutterGame) {
 }
 
 TEST_F(TestBowling, testAllOnes) {
-	for(int i = 0; i < 20; i++){
-		g->roll(1);
-	}
+	rollMany(20, 1);
 	EXPECT_THAT(g->score(), Eq(20));
 }
 
