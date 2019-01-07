@@ -1,6 +1,6 @@
 .PHONY: lib test clean
 
-test:
+test:lib
 	$(MAKE) -C tests 
 
 lib:
