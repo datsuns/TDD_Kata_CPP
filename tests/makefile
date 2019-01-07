@@ -1,4 +1,4 @@
-.PHONY: default lib
+.PHONY: default lib clean
 
 TEST_BIN := tdd_kata_cpp
 TEST_SRC := $(wildcard *.cpp)
@@ -7,6 +7,8 @@ TEST_OBJ := $(TEST_SRC:.cpp=.o)
 PRODUCT_DIR := ../src
 PRODUCT_SRC := $(wildcard $(PRODUCT_DIR)/*.cpp)
 PRODUCT_OBJ := $(PRODUCT_SRC:.cpp=.o)
+
+OBJS  := $(PRODUCT_OBJ) $(TEST_OBJ)
 
 GTEST_ROOT := lib/googletest-master
 GTEST_DIR  := $(GTEST_ROOT)/googletest
@@ -27,3 +29,8 @@ $(TEST_BIN): $(TEST_OBJ) $(PRODUCT_OBJ)
 lib:
 	make -C $(GTEST_DIR)/make
 	make -C $(GMOCK_DIR)/make
+
+clean:
+	-rm $(TEST_BIN)
+	-rm $(OBJS)
+	-rm $(GTEST_LIBS)
