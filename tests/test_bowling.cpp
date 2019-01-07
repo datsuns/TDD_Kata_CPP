@@ -16,6 +16,6 @@ class TestBowling : public testing::Test{
 };
 
 TEST_F(TestBowling, hello) {
-  EXPECT_THAT(0, Eq(1));
+  Game* g = new Game();
 }
 
