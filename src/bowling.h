@@ -3,8 +3,11 @@
 
 class Game{
 	public:
+		Game();
 		void roll(int pins);
 		int score(void);
+	private:
+		int current_score;
 };
 
 #endif
