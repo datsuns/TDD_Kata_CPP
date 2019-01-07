@@ -19,8 +19,10 @@ class TestBowling : public testing::Test{
 };
 
 TEST_F(TestBowling, testGutterGame) {
-	for(int i = 0; i < 20; i++){
-		g->roll(0);
+	int n = 20;
+	int pins = 0;
+	for(int i = 0; i < n; i++){
+		g->roll(pins);
 	}
 	EXPECT_THAT(g->score(), Eq(0));
 }
