@@ -7,15 +7,15 @@ using testing::Ne;
 using testing::NotNull;
 
 class TestBowling : public testing::Test{
-  protected:
-    virtual void SetUp() {
-    }
+	protected:
+		virtual void SetUp() {
+		}
 
-    virtual void TearDown() {
-    }
+		virtual void TearDown() {
+		}
 };
 
 TEST_F(TestBowling, hello) {
-  Game* g = new Game();
+	Game* g = new Game();
 }
 
