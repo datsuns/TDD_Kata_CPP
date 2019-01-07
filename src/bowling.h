@@ -2,6 +2,8 @@
 #define TDD_KATA_BOWLING_H_INCLUDED
 
 class Game{
+	public:
+		void roll(int pins);
 };
 
 #endif
