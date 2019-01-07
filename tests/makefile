@@ -21,8 +21,8 @@ GTEST_LIBS := \
 default: $(TEST_BIN)
 	./$(TEST_BIN)
 
-$(TEST_BIN): $(TEST_OBJ)
-	g++ -o $@ $(TEST_OBJ) $(GTEST_LIBS)
+$(TEST_BIN): $(TEST_OBJ) $(PRODUCT_OBJ)
+	g++ -o $@ $(TEST_OBJ) $(PRODUCT_OBJ) $(GTEST_LIBS)
 
 lib:
 	make -C $(GTEST_DIR)/make
