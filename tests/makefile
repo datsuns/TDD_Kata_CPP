@@ -8,8 +8,6 @@ PRODUCT_DIR := ../src
 PRODUCT_SRC := $(wildcard $(PRODUCT_DIR)/*.cpp)
 PRODUCT_OBJ := $(PRODUCT_SRC:.cpp=.o)
 
-CPPFLAGS += -I$(PRODUCT_DIR)
-
 GTEST_ROOT := lib/googletest-master
 GTEST_DIR  := $(GTEST_ROOT)/googletest
 GMOCK_DIR  := $(GTEST_ROOT)/googlemock
@@ -17,6 +15,8 @@ GTEST_LIBS := \
 	$(GMOCK_DIR)/make/libgmock_main.a \
 	$(GMOCK_DIR)/make/libgtest.a \
 	$(GMOCK_DIR)/make/libgmock.a
+
+CPPFLAGS += -I$(PRODUCT_DIR) -I$(GTEST_DIR)/include -I$(GMOCK_DIR)/include 
 
 default: $(TEST_BIN)
 	./$(TEST_BIN)
